@@ -202,7 +202,7 @@ latlong=lat:long'
      identifier = "IoT device performance and failures"
 
      # if dataage - use:dataage_utcoffset_timetype
-     preprocesslogic='min,max,variance,sum,count'
+     preprocesslogic='min,max,anomprob,trend,avg,sum,count,variance'
      #preprocesslogic='dataage_-4_day,trend,min,max' # millisecond,second,minute,hour,day
      #preprocesslogic='dataage_-4_hour' # millisecond,second,minute,hour,day
 #     preprocesslogic='dataage_1_minute' # millisecond,second,minute,hour,day
@@ -248,10 +248,9 @@ async def startviper():
 async def spawnvipers():
 
     loop.run_until_complete(startviper())
-  
+
 loop = asyncio.new_event_loop()
 loop.create_task(spawnvipers())
 asyncio.set_event_loop(loop)
 
 loop.run_forever()
-
