@@ -255,4 +255,3 @@ asyncio.set_event_loop(loop)
 
 loop.run_forever()
 
-docker build -t shayanrr/seneca-iot-tml-kafka-amd64 --build-arg CHIP=AMD64 --no-cache --network=host .
